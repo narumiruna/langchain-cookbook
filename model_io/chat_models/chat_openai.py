@@ -7,7 +7,10 @@ from loguru import logger
 def main():
     load_dotenv(find_dotenv())
 
-    chat = ChatOpenAI(model='gpt-3.5-turbo', verbose=True)
+    chat = ChatOpenAI(model_name='gpt-3.5-turbo',
+                      temperature=0.0,
+                      verbose=True)
+    logger.info('chat model: {}', chat)
 
     messages = [
         SystemMessage(content='You are a helpful assistant.'),
