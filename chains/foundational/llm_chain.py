@@ -20,6 +20,9 @@ def main():
     llm_result = llm_chain('colorful socks')
     logger.info('llm_result: {}', llm_result)
 
+    llm_result = llm_chain.predict(product='colorful socks')
+    logger.info('llm_result: {}', llm_result)
+
 
 if __name__ == '__main__':
     main()
