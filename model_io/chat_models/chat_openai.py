@@ -5,6 +5,7 @@ from loguru import logger
 
 
 def main():
+    """https://python.langchain.com/docs/modules/model_io/models/chat/"""
     load_dotenv(find_dotenv())
 
     chat = ChatOpenAI(model_name='gpt-3.5-turbo',
