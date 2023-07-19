@@ -15,7 +15,7 @@ def main():
     Ingredients:
     """
     prompt = PromptTemplate.from_template(template)
-    ingredient_chain = LLMChain(llm=llm, prompt=prompt)
+    ingredient_chain = LLMChain(llm=llm, prompt=prompt, verbose=True)
 
     llm = OpenAI(temperature=0.0)
     template = """
@@ -23,11 +23,11 @@ def main():
     Instructions:
     """
     prompt = PromptTemplate.from_template(template)
-    instruction_chain = LLMChain(llm=llm, prompt=prompt)
+    instruction_chain = LLMChain(llm=llm, prompt=prompt, verbose=True)
 
     recipe_chain = SimpleSequentialChain(chains=[ingredient_chain, instruction_chain], verbose=True)
-    review = recipe_chain.run("vanilla ice cream")
-    logger.info("recipe: {}", review)
+    recipe = recipe_chain("vanilla ice cream")
+    logger.info("recipe: {}", recipe)
 
 
 if __name__ == '__main__':
