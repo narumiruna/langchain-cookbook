@@ -15,9 +15,7 @@ def main():
     logger.info('output_parser: {}', output_parser)
 
     template = 'List all the colors in {object}:'
-    prompt = PromptTemplate(template=template,
-                            input_variables=['object'],
-                            output_parser=output_parser)
+    prompt = PromptTemplate(template=template, input_variables=['object'], output_parser=output_parser)
     logger.info('prompt: {}', prompt)
 
     llm_chain = LLMChain(prompt=prompt, llm=llm)
