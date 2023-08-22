@@ -4,11 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["なるみ <toucans-cutouts0f@icloud.com>"]
 readme = "README.md"
-packages = [{include = "langchain_cookbook"}]
+packages = [{ include = "langchain_cookbook" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-langchain = "^0.0.235"
+langchain = "^0.0.270"
 openai = "^0.27.8"
 loguru = "^0.7.0"
 python-dotenv = "^1.0.0"
